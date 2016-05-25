@@ -8,7 +8,7 @@
     var mysql = require('mysql');
     var Sequileze = require('sequelize');
 
-    var sequileze = new Sequileze('db_AppTurismo', 'root', 'jrmalg', {
+    var sequileze = new Sequileze('db_AppTurismo', 'root', '', {
         host: 'localhost',
         dialect: 'mysql',
         pool: {
@@ -87,7 +87,7 @@
     Usuario.hasMany(Comentario, {constraints: true});
     Comentario.belongsTo(Usuario, {constraints: true});
 
-    sequileze.sync({force: false});
+    sequileze.sync({force: true});
     var puerto=3000;
     var conf=require('./config');
     var app=express();

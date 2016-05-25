@@ -44,9 +44,9 @@ module.exports = (function (app){
 
     var rol = require('../Controller/RolController')(app);
 
-    ruta.get('/rol', sitio.list);
-    ruta.post('/rol', sitio.add);
-    ruta.put('/rol', sitio.edit);
-    ruta.delete('/rol', sitio.delete);
+    ruta.get('/rol', rol.list);
+    ruta.post('/rol', rol.add);
+    ruta.put('/rol', rol.edit);
+    ruta.delete('/rol', rol.delete);
     return ruta;
 });
