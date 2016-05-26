@@ -17,6 +17,7 @@ module.exports = (function (app){
     ruta.post('/usuario', usuario.add);
     ruta.put('/usuario', usuario.edit);
     ruta.delete('/usuario', usuario.delete);
+    ruta.post('/usuario/login', usuario.autenticacion);
 
     var comentario = require('../Controller/ComentarioController')(app);
 

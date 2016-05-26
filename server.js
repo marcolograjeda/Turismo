@@ -87,7 +87,7 @@
     Usuario.hasMany(Comentario, {constraints: true});
     Comentario.belongsTo(Usuario, {constraints: true});
 
-    sequileze.sync({force: true});
+    sequileze.sync({force: false});
     var puerto=3000;
     var conf=require('./config');
     var app=express();
