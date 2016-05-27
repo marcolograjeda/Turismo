@@ -18,7 +18,7 @@
         }
     });
 
-    var Rol = sequileze.define('rol', {
+    var Rol = sequileze.define('rol', { 
         idRol:{type: Sequileze.INTEGER, primaryKey: true, autoIncrement: true},
         nombre: {type: Sequileze.STRING, allowNull: false},
         descripcion: {type: Sequileze.STRING, allowNull: false}
@@ -95,6 +95,7 @@
     app.use(bodyParser.urlencoded({
         extended: true
     }));
+    app.use(bodyParser.json());
     app.use('/api/v1', require('./routes')(app));
     app.use(morgan('dev'));
     app.set('Sequelize',sequileze);

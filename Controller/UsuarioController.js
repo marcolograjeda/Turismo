@@ -62,15 +62,6 @@ module.exports = function (app) {
             });
         },
         autenticacion: function (req, res) {
-            /*var sequelize = app.get('Sequelize');
-            sequelize.query("CALL sp_autenticarUsuario('"+req.body.nick+"','"+req.body.contrasena+"');").then(function (user){
-                                        (user.length>0)
-                                            res.json(genToken(user));
-                                        else
-                                            res.json({"user":[]});
-                        }).error(function(err){
-                                res.send({"mensaje":"Error "+err,"status":"500"});
-			});*/
             var Usuario = app.get('usuario');
             Usuario.findAll({
                 where:{
