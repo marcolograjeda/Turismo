@@ -7,6 +7,7 @@
     var morgan = require('morgan');
     var mysql = require('mysql');
     var Sequileze = require('sequelize');
+    var cors = require('cors');
 
     var sequileze = new Sequileze('db_AppTurismo', 'root', '', {
         host: 'localhost',
@@ -96,6 +97,7 @@
     }));
     app.use('/api/v1', require('./routes')(app));
     app.use(morgan('dev'));
+    app.set('Sequelize',sequileze);
     app.set('departamento', Departamento);
     app.set('usuario', Usuario);
     app.set('comentario', Comentario);
